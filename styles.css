@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgba(160, 10, 60, 0.85), rgba(90, 30, 170, 0.85));
+    background-size: 150% 150%;
+    animation: gradientMove 25s ease infinite;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1.5s ease-out;
+    letter-spacing: 0.02em;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out;
+    letter-spacing: 0.03em;
+}
+
+.batak-blessing {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out;
+}
+
+.wishes {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.wishes p {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    line-height: 1.9;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 1px 0 rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.02em;
+}
+
+.wishes p:hover {
+    transform: none;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+    
+    .names {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .batak-blessing {
+        font-size: 1rem;
+    }
+    
+    .wishes {
+        margin: 2rem 0;
+        width: 100%;
+    }
+    
+    .wishes p {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .signature {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .container {
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+    
+    .wishes {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .names {
+        font-size: 3rem;
+    }
+    
+    .wishes p {
+        font-size: 0.95rem;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+@keyframes shine {
+    0% { background-position: 0% 50% }
+    100% { background-position: 100% 50% }
+} 
